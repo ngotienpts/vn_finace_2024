@@ -83,6 +83,9 @@ img {
 .font-noto {
     font-family: "Noto Serif", serif;
 }
+.font-roboto {
+    font-family: "Roboto", sans-serif;
+}
 
 /*===========================================================================*/
 .w-1252 {
@@ -142,11 +145,16 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 0.5rem 0.625rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 999px;
     background-color: transparent;
-    color: #000;
+    color: #333;
     outline: none;
-    border: none;
     transition: all 0.2s ease;
+    &:hover {
+        border-color: #eb242c;
+    }
 }
 /*===========================================================================*/
 .fs-10 {
@@ -254,8 +262,20 @@ img {
 .text-gray-66 {
     color: #666;
 }
+.text-gray-82 {
+    color: #828282;
+}
 .text-red-eb {
     color: #eb242c;
+}
+.text-red-8c {
+    color: #8c3414;
+}
+.text-green-13 {
+    color: #13cb67;
+}
+.text-blue-044 {
+    color: #04416d;
 }
 
 /*=================================================================*/
@@ -274,8 +294,17 @@ img {
 .bg-gray-f6 {
     background-color: #f6f6f6;
 }
+.bg-gray-f7 {
+    background-color: #f7f7f7;
+}
 .bg-yellow-ff {
     background-color: #ffefd7;
+}
+.bg-red-8c {
+    background-color: #8c3414;
+}
+.bg-red-e4 {
+    background-color: #e40c14;
 }
 
 /*=================================================================*/
@@ -815,7 +844,9 @@ img {
     -ms-border-radius: 0.625rem;
     -o-border-radius: 0.625rem;
 }
-
+.border-b-e5 {
+    border-bottom: 1px solid #e5e5e5;
+}
 /*=================================================================*/
 .fix-text {
     display: -webkit-box;
@@ -943,6 +974,12 @@ img {
 .h-full {
     height: 100%;
 }
+.h-40 {
+    height: 40px;
+}
+.h-30 {
+    height: 30px;
+}
 /*=================================================================*/
 .max-w-fit {
     max-width: fit-content;
@@ -1006,4 +1043,20 @@ img {
 }
 .show {
     display: block;
+}
+/*=================================================================*/
+.hover-red-8c {
+    circle {
+        fill: transparent;
+    }
+    &:hover {
+        > a {
+            color: #eb242c;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+
+        circle {
+            fill: currentColor;
+        }
+    }
 }

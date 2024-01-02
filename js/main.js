@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var fancyboxes = document.querySelectorAll(".fancybox-full");
 
     // slide
+    var oneSlides = document.querySelectorAll(".js__swiperItemsContainer");
+    var autoSlides = document.querySelectorAll(".js__swiperAutoContainer");
+    var autoVerticalSlides = document.querySelectorAll(
+        ".js__swiperAutoVeticalContainer"
+    );
 
     function switchTab(tabId, ...otherTabIds) {
         document
@@ -59,27 +64,22 @@ document.addEventListener("DOMContentLoaded", function () {
             // change tab
             if (tabOne) {
                 tabOne.onclick = function () {
-                    switchTab("tab-1", "tab-2");
+                    switchTab("tab-1", "tab-2", "tab-3", "tab-4");
                 };
             }
             if (tabTwo) {
                 tabTwo.onclick = function () {
-                    switchTab("tab-2", "tab-1");
+                    switchTab("tab-2", "tab-1", "tab-3", "tab-4");
                 };
             }
             if (tabThree) {
                 tabThree.onclick = function () {
-                    switchTab("tab-3", "tab-4", "tab-5");
+                    switchTab("tab-3", "tab-1", "tab-2", "tab-4");
                 };
             }
             if (tabFor) {
                 tabFor.onclick = function () {
-                    switchTab("tab-4", "tab-5", "tab-3");
-                };
-            }
-            if (tabFive) {
-                tabFive.onclick = function () {
-                    switchTab("tab-5", "tab-4", "tab-3");
+                    switchTab("tab-4", "tab-1", "tab-2", "tab-3");
                 };
             }
 
@@ -115,16 +115,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
         },
-        // slider one
+        // slider one item
         sliderOneItems: function () {
             oneSlides.forEach((item) => {
-                var slider = item.querySelector(".js__swiperOnes");
+                var pagi = item.querySelector(".swiper-pagination");
+                var slider = item.querySelector(".js__swiperItems");
+                new Swiper(slider, {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    slidesPerGroup: 1,
+                    autoHeight: true,
+                    effect: "fade",
+                    pagination: {
+                        el: pagi,
+                        clickable: true,
+                    },
+                });
+            });
+        },
+        // slider auto
+        sliderAutoItems: function () {
+            autoSlides.forEach((item) => {
+                var slider = item.querySelector(".js__swiperAuto");
                 var next = item.querySelector(".swiper-button-next");
                 var prev = item.querySelector(".swiper-button-prev");
                 new Swiper(slider, {
-                    slidesPerView: 1,
-                    spaceBetween: 18,
-                    slidesPerGroup: 1,
+                    slidesPerView: "auto",
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: next || null,
+                        prevEl: prev || null,
+                    },
+                });
+            });
+        },
+        // slider auto vertical
+        sliderAutoVerticalItems: function () {
+            autoVerticalSlides.forEach((item) => {
+                var slider = item.querySelector(".js__swiperAutoVertical");
+                var next = item.querySelector(".swiper-button-next");
+                var prev = item.querySelector(".swiper-button-prev");
+                new Swiper(slider, {
+                    slidesPerView: "auto",
+                    spaceBetween: 0,
+                    direction: "vertical",
                     navigation: {
                         nextEl: next || null,
                         prevEl: prev || null,
@@ -153,8 +187,12 @@ document.addEventListener("DOMContentLoaded", function () {
             this.handleEvent();
             // fancybox
             this.fancybox();
-            // slider one
-            // this.sliderOneItems();
+            // slider one item
+            this.sliderOneItems();
+            // slider auto
+            this.sliderAutoItems();
+            // slider auto vertical
+            this.sliderAutoVerticalItems();
             // window scroll
             this.windowScroll();
         },
