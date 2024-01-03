@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const tabThree = document.getElementById("tab-3");
     const tabFor = document.getElementById("tab-4");
     const tabFive = document.getElementById("tab-5");
+    const tabSix = document.getElementById("tab-6");
+    const tabSeven = document.getElementById("tab-7");
+    const tabEight = document.getElementById("tab-8");
 
     // sub menu
     const subMenus = document.querySelectorAll(".js__subMenuContainer");
@@ -22,39 +25,36 @@ document.addEventListener("DOMContentLoaded", function () {
     var autoVerticalSlides = document.querySelectorAll(
         ".js__swiperAutoVeticalContainer"
     );
+    var threeSlides = document.querySelectorAll(
+        ".js__swiperThreeItemsContainer"
+    );
 
-    function switchTab(tabId, ...otherTabIds) {
-        document
-            .querySelectorAll("[id^='tab-']")
+    function switchTab(tabContainerId, tabId) {
+        const tabsContainer = document.getElementById(tabContainerId);
+
+        tabsContainer
+            .querySelectorAll("[data-tab]")
             .forEach((tab) => tab.classList.remove("active"));
-        document
-            .querySelectorAll("[id^='pane-']")
+        tabsContainer
+            .querySelectorAll("[data-pane]")
             .forEach((pane) => pane.classList.remove("active"));
 
-        const currentTab = document.getElementById(tabId);
-        currentTab.classList.add("active");
-
-        const tabIndex = Array.from(
-            document.querySelectorAll("[id^='tab-']")
-        ).indexOf(currentTab);
-
-        const currentPane =
-            document.querySelectorAll("[id^='pane-']")[tabIndex];
-        currentPane.classList.add("active");
-
-        const otherTabIdsArray = otherTabIds.map(
-            (id) => "tab-" + id.split("-")[1]
+        const clickedTab = tabsContainer.querySelector(`[data-tab="${tabId}"]`);
+        const correspondingPane = tabsContainer.querySelector(
+            `[data-pane="${tabId}"]`
         );
 
-        document.querySelectorAll("[id^='tab-']").forEach((tab) => {
-            if (otherTabIdsArray.includes(tab.id)) {
-                tab.classList.remove("active");
-                document
-                    .getElementById("pane-" + tab.id.split("-")[1])
-                    .classList.remove("active");
-            }
-        });
+        clickedTab.classList.add("active");
+        correspondingPane.classList.add("active");
     }
+
+    document.querySelectorAll(".tab-container [data-tab]").forEach((tab) => {
+        tab.addEventListener("click", function () {
+            const tabContainerId = this.closest(".tab-container").id;
+            const tabId = this.getAttribute("data-tab");
+            switchTab(tabContainerId, tabId);
+        });
+    });
 
     const app = {
         // su ly cac su kien
@@ -64,22 +64,42 @@ document.addEventListener("DOMContentLoaded", function () {
             // change tab
             if (tabOne) {
                 tabOne.onclick = function () {
-                    switchTab("tab-1", "tab-2", "tab-3", "tab-4");
+                    switchTab("tabs-container-1", "1");
                 };
             }
             if (tabTwo) {
                 tabTwo.onclick = function () {
-                    switchTab("tab-2", "tab-1", "tab-3", "tab-4");
+                    switchTab("tabs-container-1", "2");
                 };
             }
             if (tabThree) {
                 tabThree.onclick = function () {
-                    switchTab("tab-3", "tab-1", "tab-2", "tab-4");
+                    switchTab("tabs-container-1", "3");
                 };
             }
             if (tabFor) {
                 tabFor.onclick = function () {
-                    switchTab("tab-4", "tab-1", "tab-2", "tab-3");
+                    switchTab("tabs-container-1", "4");
+                };
+            }
+            if (tabFive) {
+                tabFive.onclick = function () {
+                    switchTab("tabs-container-2", "5");
+                };
+            }
+            if (tabSix) {
+                tabSix.onclick = function () {
+                    switchTab("tabs-container-2", "6");
+                };
+            }
+            if (tabSeven) {
+                tabSeven.onclick = function () {
+                    switchTab("tabs-container-3", "7");
+                };
+            }
+            if (tabEight) {
+                tabEight.onclick = function () {
+                    switchTab("tabs-container-3", "8");
                 };
             }
 
@@ -166,6 +186,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         },
+        // slider three items
+        sliderThreeItems: function () {
+            threeSlides.forEach((item) => {
+                var slider = item.querySelector(".js__swiperThreeItems");
+                var next = item.querySelector(".swiper-button-next");
+                var prev = item.querySelector(".swiper-button-prev");
+                new Swiper(slider, {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    navigation: {
+                        nextEl: next || null,
+                        prevEl: prev || null,
+                    },
+                });
+            });
+        },
 
         // scroll top
         scrollFunc: function () {
@@ -193,6 +229,8 @@ document.addEventListener("DOMContentLoaded", function () {
             this.sliderAutoItems();
             // slider auto vertical
             this.sliderAutoVerticalItems();
+            // slider three items
+            this.sliderThreeItems();
             // window scroll
             this.windowScroll();
         },

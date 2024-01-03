@@ -1,12 +1,25 @@
 @media (max-width: 1600px) {
   /*------------------------------------------------------------- header*/
+  .navbar-container {
+    font-size: 12px;
+  }
+
   /*------------------------------------------------------------- index*/
+  .w-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
   /*------------------------------------------------------------- footer*/
 }
 @media (max-width: 1366px) {
   /*------------------------------------------------------------- header*/
+  .navbar-container {
+    font-size: 11px;
+  }
+
   /*------------------------------------------------------------- index*/
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
@@ -30,6 +43,10 @@
   }
 
   /*------------------------------------------------------------- header*/
+  .navbar-container {
+    font-size: 10px;
+  }
+
   /*------------------------------------------------------------- index*/
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
@@ -58,7 +75,7 @@
   /*------------------------------------------------------------- detail*/
   /*------------------------------------------------------------- footer*/
 }
-@media (max-width: 48em) {
+@media (max-width: 61em) {
   .d-md-none {
     display: none;
   }
@@ -77,9 +94,54 @@
 
   /*------------------------------------------------------------- header*/
   /*------------------------------------------------------------- index*/
+  .section-primary__container {
+    grid-template-columns: 250px 1fr;
+  }
+  .section-primary__right {
+    display: none;
+  }
+
+  .section-secondary__container {
+    display: block;
+  }
+  .section-secondary__left {
+    padding-right: 0;
+    border-right: none;
+  }
+  .section-secondary__left .article {
+    padding: 20px 0;
+  }
+  .section-secondary__left .article:first-child {
+    padding-top: 0;
+  }
+  .section-secondary__right {
+    padding: 20px 0 0 0;
+  }
+  .section-secondary__right .articles__small {
+    flex: 1;
+  }
+  .section-secondary__rightBox .articles__large {
+    width: 100%;
+    flex: 1;
+  }
+
+  .section-tertiary__container {
+    display: block;
+  }
+  .section-tertiary__right {
+    display: none;
+  }
+
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
   /*------------------------------------------------------------- footer*/
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-logo {
+    text-align: center;
+  }
 }
 @media (max-width: 40em) {
   .d-sm-none {
@@ -98,11 +160,69 @@
     display: grid;
   }
 
+  .w-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   /*------------------------------------------------------------- header*/
+  .header-mb .logo img {
+    height: 40px;
+  }
+
   /*------------------------------------------------------------- index*/
+  .ads-center {
+    background-color: #fff;
+  }
+
+  .section-tertiary__left .articles__large {
+    padding: 0 0 15px 0;
+    margin: 0 0 15px 0;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .section-tertiary__left .articles__small {
+    max-width: 100%;
+  }
+  .section-tertiary__left .swiper {
+    height: 300px;
+  }
+
+  .box-media .articles__small {
+    max-height: 368px;
+    overflow-y: scroll;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  .box-media .articles__small::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  .box-media .articles__small::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .box-media .articles__small::-webkit-scrollbar-thumb {
+    background: #ffe0b2;
+    border-radius: 1rem;
+  }
+  .box-media .articles__small::-webkit-scrollbar-thumb:hover {
+    background: #ffe0b2;
+  }
+  .box-media .articles__small .article:first-child {
+    padding-top: 0;
+  }
+  .box-media .articles__small .article:last-child {
+    border-bottom: none;
+  }
+
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
   /*------------------------------------------------------------- footer*/
+  .footer-content {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
 }
 @media (max-width: 25em) {
   /*------------------------------------------------------------- header*/

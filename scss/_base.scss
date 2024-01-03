@@ -155,7 +155,16 @@ img {
     &:hover {
         border-color: #eb242c;
     }
+    &--secondary {
+        color: #fcfaf6;
+        height: 1.875rem;
+
+        &:hover {
+            color: #eb242c;
+        }
+    }
 }
+
 /*===========================================================================*/
 .fs-10 {
     font-size: 0.625rem;
@@ -235,9 +244,21 @@ img {
     display: block;
     padding-bottom: 100%;
 }
+.image-wrapper-120 {
+    position: relative;
+    display: block;
+    padding-bottom: 120%;
+}
+.image-wrapper-150 {
+    position: relative;
+    display: block;
+    padding-bottom: 150%;
+}
 
 .image-wrapper img,
-.image-wrapper-full img {
+.image-wrapper-full img,
+.image-wrapper-120 img,
+.image-wrapper-150 img {
     position: absolute;
     object-fit: cover;
     width: 100%;
@@ -255,6 +276,9 @@ img {
 }
 .text-gray-44 {
     color: #444;
+}
+.text-gray-4f {
+    color: #4f4f4f;
 }
 .text-gray-55 {
     color: #555;
@@ -277,7 +301,9 @@ img {
 .text-blue-044 {
     color: #04416d;
 }
-
+.text-blue-152 {
+    color: #152764;
+}
 /*=================================================================*/
 .bg-white {
     background-color: #fff;
@@ -300,13 +326,18 @@ img {
 .bg-yellow-ff {
     background-color: #ffefd7;
 }
+.bg-yellow-ff4 {
+    background-color: #fff4e4;
+}
 .bg-red-8c {
     background-color: #8c3414;
 }
 .bg-red-e4 {
     background-color: #e40c14;
 }
-
+.bg-blue-152 {
+    background-color: #152764;
+}
 /*=================================================================*/
 .fw-300 {
     font-weight: 300;
