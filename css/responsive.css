@@ -50,6 +50,10 @@
   /*------------------------------------------------------------- index*/
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
+  .detail-content {
+    padding-left: 2rem;
+  }
+
   /*------------------------------------------------------------- footer*/
 }
 @media (max-width: 64em) {
@@ -134,6 +138,10 @@
 
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
+  .detail-content {
+    padding-left: 0;
+  }
+
   /*------------------------------------------------------------- footer*/
   .footer-top {
     flex-direction: column;
@@ -218,6 +226,17 @@
 
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
+  .detail-primary .articles-primary-mb .article__title {
+    font-size: 16px;
+    letter-spacing: normal;
+  }
+  .detail-primary .detail-related-news .articles {
+    gap: 10px;
+  }
+  .detail-primary .detail-other-news .article:first-child {
+    padding-top: 0;
+  }
+
   /*------------------------------------------------------------- footer*/
   .footer-content {
     grid-template-columns: 1fr;
