@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var windowWidth = window.innerWidth;
 
     var bodyEle = document.querySelector("body");
+    var navbar = document.querySelector(".js__navbar");
+    var navbarMb = document.querySelector(".js__navbarMb");
 
     // change tab
     const tabOne = document.getElementById("tab-1");
@@ -206,6 +208,21 @@ document.addEventListener("DOMContentLoaded", function () {
         // scroll top
         scrollFunc: function () {
             const scrollY = window.scrollY;
+
+            if (navbar) {
+                const isSticky = scrollY > 500;
+                if (isSticky !== this.isSticky) {
+                    navbar.classList.toggle("sticky", isSticky);
+                    this.isSticky = isSticky;
+                }
+            }
+            if (navbarMb) {
+                const isStickyMb = scrollY > 500;
+                if (isStickyMb !== this.isStickyMb) {
+                    navbarMb.classList.toggle("sticky", isStickyMb);
+                    this.isStickyMb = isStickyMb;
+                }
+            }
         },
 
         // window scroll

@@ -23,6 +23,20 @@
   /*------------------------------------------------------------- index*/
   /*------------------------------------------------------------- cate*/
   /*------------------------------------------------------------- detail*/
+  .emagazine-primary__thumb .image-wrapper {
+    padding-bottom: 120%;
+  }
+  .emagazine-primary__text {
+    padding: 20px;
+  }
+
+  .emagazine-secondary {
+    padding: 20px;
+  }
+  .emagazine-secondary__right blockquote > p {
+    font-size: 20px !important;
+  }
+
   /*------------------------------------------------------------- footer*/
 }
 @media (max-width: 80em) {
@@ -235,6 +249,59 @@
   }
   .detail-primary .detail-other-news .article:first-child {
     padding-top: 0;
+  }
+
+  .emagazine-primary {
+    display: flex;
+    flex-direction: column;
+  }
+  .emagazine-primary__text {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: unset;
+  }
+  .emagazine-primary__thumb .image-wrapper {
+    padding-bottom: 60%;
+  }
+  .emagazine-primary__cate {
+    border-bottom: 2px solid #e40c14;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+  }
+
+  .emagazine-secondary {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .emagazine-secondary__right figure.expNoEdit.right,
+.emagazine-secondary__right figure.expNoEdit.left {
+    text-align: left;
+    max-width: 100%;
+    float: unset;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .emagazine-secondary__right blockquote.right,
+.emagazine-secondary__right blockquote.left {
+    float: unset;
+    width: auto !important;
+    margin-left: 0 !important;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-right: 0 !important;
+  }
+  .emagazine-secondary__right blockquote > p {
+    font-weight: 400;
+    line-height: 130% !important;
+  }
+  .emagazine-secondary__right h2,
+.emagazine-secondary__right h3,
+.emagazine-secondary__right h4,
+.emagazine-secondary__right h5,
+.emagazine-secondary__right h6 {
+    font-size: 24px;
   }
 
   /*------------------------------------------------------------- footer*/

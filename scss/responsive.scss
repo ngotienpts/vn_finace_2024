@@ -25,6 +25,22 @@
     /*------------------------------------------------------------- index*/
     /*------------------------------------------------------------- cate*/
     /*------------------------------------------------------------- detail*/
+    .emagazine-primary {
+        &__thumb {
+            .image-wrapper {
+                padding-bottom: 120%;
+            }
+        }
+        &__text {
+            padding: 20px;
+        }
+    }
+    .emagazine-secondary {
+        padding: 20px;
+        &__right blockquote > p {
+            font-size: 20px !important;
+        }
+    }
     /*------------------------------------------------------------- footer*/
 }
 // max width 1280px
@@ -255,6 +271,63 @@
                 &:first-child {
                     padding-top: 0;
                 }
+            }
+        }
+    }
+    .emagazine-primary {
+        display: flex;
+        flex-direction: column;
+
+        &__text {
+            position: relative;
+            top: auto;
+            right: auto;
+            transform: unset;
+        }
+        &__thumb {
+            .image-wrapper {
+                padding-bottom: 60%;
+            }
+        }
+        &__cate {
+            border-bottom: 2px solid #e40c14;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+    }
+    .emagazine-secondary {
+        padding-left: 15px;
+        padding-right: 15px;
+        &__right {
+            figure.expNoEdit.right,
+            figure.expNoEdit.left {
+                text-align: left;
+                max-width: 100%;
+                float: unset;
+                width: 100% !important;
+                margin-left: 0 !important;
+            }
+            blockquote.right,
+            blockquote.left {
+                float: unset;
+                width: auto !important;
+                margin-left: 0 !important;
+                max-width: 100%;
+                margin-bottom: 20px;
+                margin-right: 0 !important;
+            }
+            blockquote > p {
+                font-weight: 400;
+                line-height: 130% !important;
+            }
+
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: 24px;
             }
         }
     }
